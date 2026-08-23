@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Chakra Petch', sans-serif;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.18), transparent 36%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.12), transparent 28%),
+    linear-gradient(150deg, #020617 0%, #0f172a 45%, #111827 100%);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.title-gradient {
+  background: linear-gradient(110deg, #ecfeff 10%, #67e8f9 50%, #fde68a 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.void-card::after {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border: 1px solid rgba(34, 211, 238, 0.18);
+  border-radius: 999px;
+}
+
+.void-pulse {
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.24), transparent 66%);
+  animation: pulseField 5s ease-in-out infinite;
+}
+
+.void-orbit {
+  animation: spinOrbit 14s linear infinite;
+}
+
+@keyframes spinOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseField {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 1;
+  }
+}
